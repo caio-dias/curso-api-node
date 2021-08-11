@@ -32,6 +32,8 @@ const upload = multer(
     }
 )
 
+//fazer upload de imagem: upload.single('produto_imagem') na rota do post
+
 //autenticacao de usuario
 const verificaLogin = require('../middlewares/login')
 
@@ -42,7 +44,7 @@ router.get('/', produtosController.getProdutos)
 
 router.get('/:id_produto', produtosController.getProdutoDetalhe)
 
-router.post('/', verificaLogin.obrigatorio, upload.single('produto_imagem'), produtosController.postProduto)
+router.post('/', verificaLogin.obrigatorio, produtosController.postProduto)
 
 router.patch('/', verificaLogin.obrigatorio, produtosController.patchProduto)
 

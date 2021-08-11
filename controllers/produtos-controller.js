@@ -81,7 +81,7 @@ exports.postProduto = (req, res, next) => {
 
         conn.query(
             'INSERT INTO produtos (nome, preco, imagem_produto) VALUES (?,?,?)',
-            [req.body.nome, req.body.preco, req.file.path],
+            [req.body.nome, req.body.preco, req.body.imagem_produto],
             (error, result, field) => {
                 //sempre dar o release, para nao acumular o pool de conexoes
                 conn.release()
@@ -94,7 +94,7 @@ exports.postProduto = (req, res, next) => {
                         id_produto: result.id_produto,
                         nome: req.body.nome,
                         preco: req.body.preco,
-                        imagem_produto: req.file.path,
+                        imagem_produto: req.body.imagem_produto,
                         request: {
                             tipo: 'GET',
                             descricao: 'retorna todos os produtos.',
