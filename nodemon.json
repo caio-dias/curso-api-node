@@ -5,6 +5,7 @@
         "MYSQL_DATABASE": "ecommerce",
         "MYSQL_HOST": "localhost",
         "MYSQL_PORT": "3306",
-        "JWT_KEY": "segredo"
+        "JWT_KEY": "segredo",
+        "URL_API": "localhost:3000"
     }
 }
